@@ -240,7 +240,7 @@ api_data.rename(columns={'userId': 'user_id', 'productId': 'product_id'})
 ```python
 # Cap extreme stock returns for risk calculations
 returns = portfolio['daily_return']
-returns[returns.abs() > 3*returns.std()] = np.sign(returns) * 3*returns.std()
+returns[returns.abs() > 3*returns.std()] = np.sign(returns) * 3*returns.std() # same as df.clip(lower, upper)
 ```
 
 **E-commerce Pricing**
